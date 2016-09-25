@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="about">
+  <div>
+    <ion-card *ngFor="let serie of series" (click)="goToSeriesDetail(serie.imdbID)">
+      <img [src]="serie.Poster"/>    
+    </ion-card>
+  </div>
+</ion-content>

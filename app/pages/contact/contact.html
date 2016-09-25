@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button (click)="openFilterModal()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Coming Soon
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card *ngFor="let comingSoon of comingSoonFilms" (click)="goToComingSoonDetail(comingSoon.imdbID)">
+      <img [src]="comingSoon.Poster"/>    
+    </ion-card>
+  </div>
+</ion-content>

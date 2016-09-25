@@ -1,0 +1,83 @@
+<!--
+  Generated template for the MovieDetailPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Movie Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="movie-detail">
+
+  <ion-slides id="gallery-slider" [options]="slidesOptions">
+    <ion-slide *ngFor="let image of movie.Images">
+      <img [src]="image"/>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-card>
+    <ion-card-header>
+      {{movie.Title}}
+    </ion-card-header>
+    <ion-card-content>
+      {{movie.Plot}}
+    </ion-card-content>
+
+    <ion-card-header>
+      Details
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        Released
+        <ion-badge item-right>{{movie.Released}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        Age Rating
+        <ion-badge item-right>{{movie.Rated}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        Movie Length
+        <ion-badge item-right>{{movie.Runtime}}</ion-badge>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-header>
+      Actors
+    </ion-card-header>
+    <ion-card-content>
+      {{movie.Actors}}
+    </ion-card-content>
+
+    <ion-card-header>
+      Popularity
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="star-half" item-left></ion-icon>
+        Ratings
+        <ion-badge item-right>{{movie.imdbRating}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="people" item-left></ion-icon>
+        Votes
+        <ion-badge item-right>{{movie.imdbVotes}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="square" item-left></ion-icon>
+        Metascore
+        <ion-badge secondary item-right>{{movie.Metascore}}</ion-badge>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
